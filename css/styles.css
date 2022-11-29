@@ -214,6 +214,9 @@ footer {
   text-align: center;
   min-height: 56rem;
 }
+footer .footer-wrapper {
+  margin: 0 1rem;
+}
 footer .contact {
   margin: 0 1rem;
 }
@@ -262,9 +265,104 @@ footer .contact form .submit {
   margin-left: auto;
 }
 footer hr {
+  width: calc(100% - 2rem);
   margin: 0 1rem;
-  width: 92%;
 }
 footer .navbar {
   margin-bottom: 2rem;
+}
+
+@media screen and (min-width: 750px) {
+  .navbar {
+    width: calc(100% - 2rem);
+    margin: 0 1rem;
+    flex-direction: row;
+  }
+  .profile {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  .profile .description {
+    margin-top: 1rem;
+    padding: 0;
+    margin-bottom: 3.75rem;
+  }
+  .profile .description h1, .profile .description p {
+    text-align: left;
+  }
+  .profile .description h1 {
+    margin-bottom: 3.75rem;
+  }
+  .profile .description .contact-me, .profile .description .projects-body .project .links a, .projects-body .project .links .profile .description a, .profile .description footer .contact form .submit, footer .contact form .profile .description .submit {
+    display: -webkit-box;
+    margin-right: auto;
+  }
+  .profile img, .profile picture {
+    min-width: 20.125rem !important;
+  }
+  .experience {
+    min-width: 44.25rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, -webkit-min-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-row-gap: 3.25rem;
+    margin-bottom: 6.25rem;
+  }
+  .experience .skill {
+    min-width: 21.625rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-bottom: 0rem;
+  }
+  .experience .react, .experience .sass {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .experience h2, .experience p {
+    text-align: left;
+  }
+  .experience h2 {
+    margin-bottom: 0.875rem;
+  }
+  .skills-projects-separator {
+    display: none;
+  }
+  .projects {
+    min-width: 44.25rem;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, -webkit-min-content);
+    grid-template-rows: repeat(2, min-content);
+    grid-row-gap: 3.75rem;
+    grid-column-gap: 1.375rem;
+  }
+  .footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .contact {
+    max-width: 27.875rem;
+  }
+  .contact h2 {
+    font-size: 5rem !important;
+  }
 }/*# sourceMappingURL=styles.css.map */
