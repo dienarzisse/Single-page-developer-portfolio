@@ -3,9 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="/css/styles.css">
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script defer src="script.js"></script>
   <title>Frontend Mentor | Single-page developer portfolio</title>
 </head>
 <body>
@@ -35,7 +36,10 @@
 
   <div class="profile">
     <div class="description">
-      <h1>Nice to meet you! I'm <span>Adam Keyes.</span></h1>
+      <div class="header-wrapper">
+        <h1>Nice to <br class="br1">meet you! <br class="br2">I'm <span class="dev-name">Adam Keyes.</span></h1>
+      </div>
+      
         
       <p>Based in the UK, I'm a front-end developer passionate about 
         building accessible web apps that users love.</p>
@@ -43,7 +47,7 @@
       <a class="contact-me" href="#contact">Contact me</a>
     </div>
     <picture class="profile-image">
-      <source media="(min-width:750px)" srcset="./images/image-profile-tablet.webp">
+      <source media="(min-width:768px)" srcset="./images/image-profile-tablet.webp">
       <source media="(min-width:1200px)" srcset="./images/image-profile-desktop.webp">
       <!-- Moblie profile image -->
       <img src="./images/image-profile-mobile.webp" alt="Profile Picture">
@@ -88,7 +92,7 @@
     </div>
     <div class="projects">
       <div class="project">
-        <picture class="project-image">
+        <picture class="project-image project-image1">
           <source media="(min-width:1200px)" srcset="./images/thumbnail-project-1-large.webp">
           <img src="./images/thumbnail-project-1-small.webp" alt="Design Portofolio">
         </picture>
@@ -100,8 +104,8 @@
           </ul>
         </div>
         <div class="links">
-          <a class ="view-project" href="">View Project</a>
-          <a class="view-code" href="">View Code</a>
+          <a class ="view-project" href="#">View Project</a>
+          <a class="view-code" href="#">View Code</a>
         </div>
       </div>
 
