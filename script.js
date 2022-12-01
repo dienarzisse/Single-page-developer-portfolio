@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+    // hover effect on windows
     function listenHoverPicture(){
     $(".project-image").on("mouseover", function(){
         $(this).parent().find('.links').css('opacity', '1');
