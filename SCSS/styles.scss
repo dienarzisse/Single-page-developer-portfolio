@@ -521,6 +521,14 @@
 
    main{
       min-width: 70rem !important;
+   
+      .profile-circle{
+         right: 34%;
+         top: 37rem;
+      }
+      .projects-rings{
+         top: 68.5rem !important;
+      }
    }
 
    .navbar{
@@ -546,7 +554,6 @@
       min-height: 41rem;
       margin-bottom: 6.5rem;
       justify-content: space-between;
-
       picture{
          min-width: 27.875rem;
       }
@@ -556,13 +563,7 @@
 
       }
    }
-   .profile-circle{
-      opacity: 0;
-   }
-
-   .projects-rings{
-      top: 68.5rem !important;
-   }
+   
 
    // description
    .description{
@@ -661,7 +662,15 @@
  }
 
  @media screen and (min-width: $desktop-wide) {
-   main,.footer-wrapper, .profile, .experience, .projects-body, .navbar, hr{
+   main,.footer-wrapper{
       min-width: 90% !important;
    } 
+
+   .profile, .experience, .projects-body, .navbar, hr{
+      min-width: 100% !important;
+   }
+
+   .profile-circle{
+      right: 24% !important;
+   }
  }

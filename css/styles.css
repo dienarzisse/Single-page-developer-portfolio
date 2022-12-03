@@ -475,6 +475,13 @@ footer .navbar {
   main {
     min-width: 70rem !important;
   }
+  main .profile-circle {
+    right: 34%;
+    top: 37rem;
+  }
+  main .projects-rings {
+    top: 68.5rem !important;
+  }
   .navbar {
     min-width: 70rem !important;
   }
@@ -500,12 +507,6 @@ footer .navbar {
   .profile img {
     min-width: 100%;
     transform: translateX(0);
-  }
-  .profile-circle {
-    opacity: 0;
-  }
-  .projects-rings {
-    top: 68.5rem !important;
   }
   .description {
     padding: 0;
@@ -589,7 +590,13 @@ footer .navbar {
   }
 }
 @media screen and (min-width: 1600px) {
-  main, .footer-wrapper, .profile, .experience, .projects-body, .navbar, hr {
+  main, .footer-wrapper {
     min-width: 90% !important;
+  }
+  .profile, .experience, .projects-body, .navbar, hr {
+    min-width: 100% !important;
+  }
+  .profile-circle {
+    right: 24% !important;
   }
 }/*# sourceMappingURL=styles.css.map */
