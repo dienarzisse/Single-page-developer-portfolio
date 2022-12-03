@@ -5,6 +5,11 @@
   box-sizing: 0;
 }
 
+:root {
+  scrollbar-color: #4EE1A0 #242424 !important;
+  scrollbar-width: auto !important;
+}
+
 body {
   background-color: #151515;
   color: #FFFFFF;
@@ -148,10 +153,17 @@ main .projects-rings {
           text-decoration-color: #4EE1A0;
   text-decoration-thickness: 0.125rem;
   text-underline-offset: 0.625rem;
+  background: linear-gradient(to left, white, white 50%, #4EE1A0 50%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
 }
 
 .contact-me:hover, footer .contact form .submit:hover, .projects-body .project .links a:hover {
-  color: #4EE1A0;
+  background-position: 0 100%;
 }
 
 hr {

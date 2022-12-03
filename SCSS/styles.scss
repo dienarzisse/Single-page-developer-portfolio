@@ -21,6 +21,10 @@
    -o-user-select: none;
 }
 
+:root{
+   scrollbar-color: $green $grey !important;
+   scrollbar-width: auto !important;
+ }
  // mobile first
  body{
    background-color: $black;
@@ -155,10 +159,18 @@
    text-decoration-thickness: 0.125rem;
    text-underline-offset: 0.625rem;
 
+   // contact me button animation
+   background: linear-gradient(to left, white, white 50%, $green 50%);
+   background-clip: text;
+   -webkit-background-clip: text;
+   -webkit-text-fill-color: transparent;
+   background-size: 200% 100%;
+   background-position: 100%;
+   transition: background-position 275ms ease;
 }
 
  .contact-me:hover{
-   color: $green;
+   background-position: 0 100%;
 }
 
  hr{
