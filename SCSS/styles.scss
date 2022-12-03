@@ -27,11 +27,34 @@
    color: $white;
    font-family: $font-family;
    @include flex-center(column);
+   overflow-x: hidden;
  }
 
  main{
-   width: 92%;
+   position: relative;
+   max-width: 92%;
    @include flex-center(column);
+
+   // background patterns
+   .profile-circle, .profile-rings, .projects-rings{
+      position: absolute;
+   }
+
+   .profile-circle{
+      top: 15.5rem;
+      right: -6rem;
+   }
+
+   .profile-rings{
+      top: 8rem;
+      left: -21.375rem;
+      z-index: -2;
+   }
+
+   .projects-rings{
+      top: 78.75rem;
+      right: -21.375rem;
+   }
  }
 
  .navbar{
@@ -69,8 +92,9 @@
  }
 
  .profile{
+   max-width: 21.5rem;
    @include flex-center(column-reverse);
-
+   position: relative;
    h1{
       text-align: center;
       font-size: 2.5rem;
@@ -117,6 +141,7 @@
       min-height: 15.25rem;
       padding-bottom: 5rem;
    }
+
  }
 
  .contact-me{
@@ -225,6 +250,7 @@
  }
  
  footer{
+   position: relative;
    width: 100%;
    background-color: $grey;
    text-align: center;
@@ -314,8 +340,17 @@
                margin-bottom: 2rem;
             }
          }
+
+         
          
       }
+   }
+
+   .contact-rings{
+      position: absolute;
+      top: 29.5rem;
+      left: -21.375rem;
+
    }
 
    hr{
@@ -330,21 +365,37 @@
 
  // tablet
  @media screen and (min-width: $tablet) {
+   main{
+      min-width: 44.25rem;
+      .profile-circle{
+         top: 28.75rem;
+      }
+   
+      .profile-rings{
+         top: 4rem;
+         z-index: -2;
+      }
+   
+      .projects-rings{
+         top: 58.25em;
+      }
+   }
    .navbar{
-      width: calc(100% - 2rem);
+      min-width: calc(100vw - 6rem);
       margin: 0 1rem;
+      margin-bottom: 2rem !important;
       flex-direction: row;
    }
 
-   // profile image - solve the h1 overlay problem
    .profile{
-      width: 100%;
-      height: fit-content;
+      min-width: 44.25rem;
+      max-height: 28.125rem;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       align-items: flex-start;
       margin: 0;
+      margin-bottom: 3.75rem;
       padding: 0;
       position: relative;
       padding-right: -1rem;
@@ -375,11 +426,11 @@
          h1{
             text-align: left;
             letter-spacing: -0.125rem;
-            font-size: 4.5rem !important;
+            font-size: 4.65rem;
             position: absolute;
             top: 0;
             left: 0;
-            min-width: 27.75rem;
+            min-width: 30.75rem;
          }
          .contact-me{
             display: -webkit-box;
@@ -390,16 +441,22 @@
          }
       }
       picture{
-         min-width: 42%
+         min-width: 20.125rem;
+         position: relative;
       }
       img{
-         min-width: 100%;
+         min-width: 100%;    
+         transform: translate(3rem, -1rem);
       }
+   }
+
+   hr{
+      max-width: 44.25rem;
    }
 
    // experience
    .experience{
-      min-width: 44.25rem;
+      max-width: 44.25rem;
       height: fit-content;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -428,8 +485,11 @@
    }
 
    // projects
+   .projects-body{
+      max-width: 44.25rem;
+   }
+
    .projects{
-      min-width: 44.25rem;
       height: fit-content;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -439,6 +499,12 @@
    }
 
    // footer
+   footer{
+      .contact-rings{
+         top: 41.5rem;
+      }
+   }
+
    .footer-wrapper{
       @include flex-center(column);
    }
@@ -454,51 +520,66 @@
  @media screen and (min-width: $desktop) {
 
    main{
-      width: 70rem !important;
+      min-width: 70rem !important;
    }
 
-   .footer-wrapper{
+   .navbar{
       min-width: 70rem !important;
    }
 
    footer{
+      // overflow-y: hidden;
       min-height: auto;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
+
+      .contact-rings{
+         top: 26rem !important;
+      }
    }
 
    // profile
    .profile{
+      min-width: 70rem !important;
+      min-height: 41rem;
+      margin-bottom: 6.5rem;
       justify-content: space-between;
 
       picture{
-         min-width: 51% !important;
-         transform: translateY(-10rem) !important;
+         min-width: 27.875rem;
       }
       img{
          min-width: 100%;
+         transform: translateX(0);
+
       }
+   }
+   .profile-circle{
+      opacity: 0;
+   }
+
+   .projects-rings{
+      top: 68.5rem !important;
    }
 
    // description
    .description{
       padding: 0;
       margin: 0;
-      margin-top: 10rem !important;
       min-height: 25.75rem !important;      
       .header-wrapper{
          position: relative;
          padding:0;
-         margin-bottom: 2.75rem;     
+         width: auto;   
       }
 
       h1{
-         position: absolute;
-         font-size: 7.5rem !important;
-         min-width: 44.375rem !important;     
+         font-size: 5.5rem !important;
+         min-width: 50rem !important;     
       }
+
 
       .br1{
          display: none !important;
@@ -521,9 +602,12 @@
 
    }
 
+   hr{
+      min-width: 70rem !important;
+   }
    // experience
    .experience{
-      width: 100%;
+      min-width: 70rem !important;
       margin-top: 4.5rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -531,6 +615,9 @@
    }
 
    // projects
+   .projects-body{
+      min-width: 70rem !important;
+   }
    .project{
       position: relative;
       img{
@@ -554,8 +641,9 @@
 
    // contact
    .contact{
-      min-width: 100%;
+      min-width: 70rem !important;
       margin:0 !important;
+      padding-top: 2.5rem !important;
       padding:0;
       display: flex;
       flex-direction: row;
@@ -569,14 +657,11 @@
          min-width: 40%;
       }
    }
+
  }
 
  @media screen and (min-width: $desktop-wide) {
-   main{
-      width: 95rem !important;
-   }
-   
-   .footer-wrapper{
-      width: 95rem !important;
-   }
+   main,.footer-wrapper, .profile, .experience, .projects-body, .navbar, hr{
+      min-width: 90% !important;
+   } 
  }

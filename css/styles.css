@@ -13,14 +13,32 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow-x: hidden;
 }
 
 main {
-  width: 92%;
+  position: relative;
+  max-width: 92%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+main .profile-circle, main .profile-rings, main .projects-rings {
+  position: absolute;
+}
+main .profile-circle {
+  top: 15.5rem;
+  right: -6rem;
+}
+main .profile-rings {
+  top: 8rem;
+  left: -21.375rem;
+  z-index: -2;
+}
+main .projects-rings {
+  top: 78.75rem;
+  right: -21.375rem;
 }
 
 .navbar {
@@ -63,10 +81,12 @@ main {
 }
 
 .profile {
+  max-width: 21.5rem;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 .profile h1 {
   text-align: center;
@@ -212,6 +232,7 @@ hr {
   gap: 1rem;
 }
 footer {
+  position: relative;
   width: 100%;
   background-color: #242424;
   text-align: center;
@@ -291,6 +312,11 @@ footer .contact form .form-input.message .invalid-message {
   margin-top: -1.5rem;
   margin-bottom: 2rem;
 }
+footer .contact-rings {
+  position: absolute;
+  top: 29.5rem;
+  left: -21.375rem;
+}
 footer hr {
   width: calc(100% - 2rem);
   margin: 0 1rem;
@@ -300,21 +326,34 @@ footer .navbar {
 }
 
 @media screen and (min-width: 768px) {
+  main {
+    min-width: 44.25rem;
+  }
+  main .profile-circle {
+    top: 28.75rem;
+  }
+  main .profile-rings {
+    top: 4rem;
+    z-index: -2;
+  }
+  main .projects-rings {
+    top: 58.25em;
+  }
   .navbar {
-    width: calc(100% - 2rem);
+    min-width: calc(100vw - 6rem);
     margin: 0 1rem;
+    margin-bottom: 2rem !important;
     flex-direction: row;
   }
   .profile {
-    width: 100%;
-    height: -webkit-fit-content;
-    height: -moz-fit-content;
-    height: fit-content;
+    min-width: 44.25rem;
+    max-height: 28.125rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
     margin: 0;
+    margin-bottom: 3.75rem;
     padding: 0;
     position: relative;
     padding-right: -1rem;
@@ -345,11 +384,11 @@ footer .navbar {
   .profile .description h1 {
     text-align: left;
     letter-spacing: -0.125rem;
-    font-size: 4.5rem !important;
+    font-size: 4.65rem;
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 27.75rem;
+    min-width: 30.75rem;
   }
   .profile .description .contact-me, .profile .description .projects-body .project .links a, .projects-body .project .links .profile .description a, .profile .description footer .contact form .submit, footer .contact form .profile .description .submit {
     display: -webkit-box;
@@ -359,13 +398,18 @@ footer .navbar {
     display: block;
   }
   .profile picture {
-    min-width: 42%;
+    min-width: 20.125rem;
+    position: relative;
   }
   .profile img {
     min-width: 100%;
+    transform: translate(3rem, -1rem);
+  }
+  hr {
+    max-width: 44.25rem;
   }
   .experience {
-    min-width: 44.25rem;
+    max-width: 44.25rem;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -397,8 +441,10 @@ footer .navbar {
   .skills-projects-separator {
     display: none;
   }
+  .projects-body {
+    max-width: 44.25rem;
+  }
   .projects {
-    min-width: 44.25rem;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -408,6 +454,9 @@ footer .navbar {
     grid-template-rows: repeat(2, min-content);
     grid-row-gap: 3.75rem;
     grid-column-gap: 1.375rem;
+  }
+  footer .contact-rings {
+    top: 41.5rem;
   }
   .footer-wrapper {
     display: flex;
@@ -424,9 +473,9 @@ footer .navbar {
 }
 @media screen and (min-width: 1200px) {
   main {
-    width: 70rem !important;
+    min-width: 70rem !important;
   }
-  .footer-wrapper {
+  .navbar {
     min-width: 70rem !important;
   }
   footer {
@@ -436,31 +485,41 @@ footer .navbar {
     justify-content: center;
     align-items: center;
   }
+  footer .contact-rings {
+    top: 26rem !important;
+  }
   .profile {
+    min-width: 70rem !important;
+    min-height: 41rem;
+    margin-bottom: 6.5rem;
     justify-content: space-between;
   }
   .profile picture {
-    min-width: 51% !important;
-    transform: translateY(-10rem) !important;
+    min-width: 27.875rem;
   }
   .profile img {
     min-width: 100%;
+    transform: translateX(0);
+  }
+  .profile-circle {
+    opacity: 0;
+  }
+  .projects-rings {
+    top: 68.5rem !important;
   }
   .description {
     padding: 0;
     margin: 0;
-    margin-top: 10rem !important;
     min-height: 25.75rem !important;
   }
   .description .header-wrapper {
     position: relative;
     padding: 0;
-    margin-bottom: 2.75rem;
+    width: auto;
   }
   .description h1 {
-    position: absolute;
-    font-size: 7.5rem !important;
-    min-width: 44.375rem !important;
+    font-size: 5.5rem !important;
+    min-width: 50rem !important;
   }
   .description .br1 {
     display: none !important;
@@ -477,13 +536,19 @@ footer .navbar {
   .description .contact-me, .description .projects-body .project .links a, .projects-body .project .links .description a, .description footer .contact form .submit, footer .contact form .description .submit {
     margin-top: -5rem;
   }
+  hr {
+    min-width: 70rem !important;
+  }
   .experience {
-    width: 100%;
+    min-width: 70rem !important;
     margin-top: 4.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, -webkit-min-content);
     grid-template-rows: repeat(1, min-content);
+  }
+  .projects-body {
+    min-width: 70rem !important;
   }
   .project {
     position: relative;
@@ -506,8 +571,9 @@ footer .navbar {
     cursor: pointer;
   }
   .contact {
-    min-width: 100%;
+    min-width: 70rem !important;
     margin: 0 !important;
+    padding-top: 2.5rem !important;
     padding: 0;
     display: flex;
     flex-direction: row;
@@ -523,10 +589,7 @@ footer .navbar {
   }
 }
 @media screen and (min-width: 1600px) {
-  main {
-    width: 95rem !important;
-  }
-  .footer-wrapper {
-    width: 95rem !important;
+  main, .footer-wrapper, .profile, .experience, .projects-body, .navbar, hr {
+    min-width: 90% !important;
   }
 }/*# sourceMappingURL=styles.css.map */
