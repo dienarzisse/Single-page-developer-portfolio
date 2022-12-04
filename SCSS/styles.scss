@@ -154,6 +154,8 @@
  }
 
  .contact-me{
+   overflow: hidden;
+   white-space: nowrap;
    color: $white;
    font-size: 1rem;
    font-weight: map-get($font-weights, "bold");

@@ -144,6 +144,8 @@ main .projects-rings {
 }
 
 .contact-me, footer .contact form .submit, .projects-body .project .links a {
+  overflow: hidden;
+  white-space: nowrap;
   color: #FFFFFF;
   font-size: 1rem;
   font-weight: 700;
