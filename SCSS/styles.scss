@@ -302,6 +302,7 @@
  }
  
  footer{
+   animation: 1500ms linear 0s 1 slideInFromLeft;
    @include flex-center(column);
    position: relative;
    width: 100%;

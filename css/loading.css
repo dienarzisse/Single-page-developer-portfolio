@@ -28,10 +28,126 @@ body {
 }
 
 .loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  min-height: 100vh;
+}
+
+@-webkit-keyframes ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 10px 2px #4EE1A0;
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 10px 2px #FF6F5B;
+  }
+  75% {
+    transform: rotate(270deg);
+    box-shadow: 1px 10px 2px turquoise;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 10px 2px #4EE1A0;
+  }
+}
+
+@keyframes ring {
+  0% {
+    transform: rotate(0deg);
+    box-shadow: 1px 10px 2px #4EE1A0;
+  }
+  50% {
+    transform: rotate(180deg);
+    box-shadow: 1px 10px 2px #FF6F5B;
+  }
+  75% {
+    transform: rotate(270deg);
+    box-shadow: 1px 10px 2px turquoise;
+  }
+  100% {
+    transform: rotate(360deg);
+    box-shadow: 1px 10px 2px #4EE1A0;
+  }
+}
+.ring {
+  position: absolute;
+  width: 40rem;
+  height: 40rem;
+  border-radius: 50%;
+  -webkit-animation: ring 2s linear infinite;
+          animation: ring 2s linear infinite;
+}
+
+.ring:before {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(217, 217, 217, 0.3);
+}
+
+@-webkit-keyframes typing {
+  0%, 90%, 100% {
+    width: 0;
+  }
+  30%, 60% {
+    width: 507.21px;
+  }
+}
+
+@keyframes typing {
+  0%, 90%, 100% {
+    width: 0;
+  }
+  30%, 60% {
+    width: 507.21px;
+  }
+}
+span {
+  position: relative;
   color: #FFFFFF;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
-  -webkit-animation: 1s ease-out 0s 1 slideInFromLeft;
-          animation: 1s ease-out 0s 1 slideInFromLeft;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  -webkit-animation: typing 8s steps(23) infinite;
+          animation: typing 8s steps(23) infinite;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+@-webkit-keyframes blinkCursor {
+  0%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+
+@keyframes blinkCursor {
+  0%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+span:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: #4EE1A0;
+  -webkit-animation: blinkCursor 0.8s steps(3) infinite;
+          animation: blinkCursor 0.8s steps(3) infinite;
 }/*# sourceMappingURL=loading.css.map */

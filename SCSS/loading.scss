@@ -22,9 +22,95 @@ body{
 }
 
 .loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;;
+}
+
+@keyframes ring {
+    0%{
+        transform: rotate(0deg);
+        box-shadow: 1px 10px 2px $green;
+    }
+    50%{
+        transform: rotate(180deg);
+        box-shadow: 1px 10px 2px $red;
+    }
+    75%{
+        transform: rotate(270deg);
+        box-shadow: 1px 10px 2px turquoise;
+    }
+    100%{
+        transform: rotate(360deg);
+        box-shadow: 1px 10px 2px $green;
+    }
+}
+
+.ring{
+    position: absolute;
+    width: 40rem;
+    height: 40rem;
+    border-radius: 50%;
+    animation: ring 2s linear infinite;
+}
+
+.ring:before{
+    position: absolute;
+    content: '';
+    left: 0;
+    top:0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow:  0 0 5px rgba(217, 217, 217, .3);
+}
+
+@keyframes typing {
+    0%, 90%, 100%
+    {
+        width: 0;
+    }
+    30%,60%
+    {
+        width: 507.21px;
+    }
+}
+
+span{
+    position: relative;
     color: $white;
     font-family: $font-family;
     font-weight: map-get($font-weights, "bold");
     font-size: 2.5rem;
-    animation: 1s ease-out 0s 1 slideInFromLeft;
+    text-transform: lowercase;
+    letter-spacing: 1px;
+    animation: typing 8s steps(23) infinite;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@keyframes blinkCursor {
+    0%,75%
+    {
+        opacity: 1;
+    }
+
+    76%, 100%
+    {
+        opacity: 0;
+    }
+    
+}
+
+span:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: $green;
+    animation: blinkCursor 0.8s steps(3) infinite;
 }

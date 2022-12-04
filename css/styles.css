@@ -286,6 +286,8 @@ hr {
   gap: 1rem;
 }
 footer {
+  -webkit-animation: 1500ms linear 0s 1 slideInFromLeft;
+          animation: 1500ms linear 0s 1 slideInFromLeft;
   display: flex;
   flex-direction: column;
   justify-content: center;

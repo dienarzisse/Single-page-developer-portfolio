@@ -3,7 +3,7 @@ $(document).ready(function(){
     setTimeout(function(){
         $('link[rel=stylesheet]').remove();
         $('head').append('<link rel="stylesheet" href="/css/styles.css">');
-    },2000);
+    },7000);
 
 
     // hover effect on windows
