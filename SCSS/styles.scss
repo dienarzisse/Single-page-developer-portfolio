@@ -696,7 +696,7 @@
 
  @media screen and (min-width: $desktop-wide) {
 
-   .profile, .experience, .projects-body, .footer-wrapper, hr{
+   .profile, .experience, .projects-body, .footer-wrapper, hr, .navbar{
       min-width:  $wide-dekstop-width !important;
    }
 
@@ -708,7 +708,7 @@
       opacity: 0;
    }
 
-   .navbar{
+   footer .navbar{
       width: 100%;
    }
 

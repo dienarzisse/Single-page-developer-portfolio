@@ -616,7 +616,7 @@ footer .navbar {
   }
 }
 @media screen and (min-width: 1600px) {
-  .profile, .experience, .projects-body, .footer-wrapper, hr {
+  .profile, .experience, .projects-body, .footer-wrapper, hr, .navbar {
     min-width: 80% !important;
   }
   .contact, footer {
@@ -625,7 +625,7 @@ footer .navbar {
   .profile-circle {
     opacity: 0;
   }
-  .navbar {
+  footer .navbar {
     width: 100%;
   }
   footer hr {
