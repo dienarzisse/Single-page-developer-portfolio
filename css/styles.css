@@ -133,18 +133,18 @@ main .projects-rings {
   margin-bottom: 1.5rem;
 }
 @-webkit-keyframes typing {
-  0%, 90%, 100% {
+  0% {
     width: 0;
   }
-  30%, 60% {
+  100% {
     width: 100%;
   }
 }
 @keyframes typing {
-  0%, 90%, 100% {
+  0% {
     width: 0;
   }
-  30%, 60% {
+  100% {
     width: 100%;
   }
 }
@@ -163,8 +163,8 @@ main .projects-rings {
   max-width: -moz-fit-content;
   max-width: fit-content;
   letter-spacing: 0px;
-  -webkit-animation: typing 4s steps(13);
-          animation: typing 4s steps(13);
+  -webkit-animation: typing 2s steps(15);
+          animation: typing 2s steps(15);
 }
 @-webkit-keyframes blinkCursor {
   0%, 75% {

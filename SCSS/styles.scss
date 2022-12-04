@@ -153,11 +153,11 @@ html{
    }
 
    @keyframes typing {
-      0%, 90%, 100%
+      0%
       {
           width: 0;
       }
-      30%, 60%
+      100%
       {
          width: 100%;
       }
@@ -174,7 +174,7 @@ html{
       text-decoration-color: $green;
       max-width: fit-content;
       letter-spacing: 0px;
-      animation: typing 4s steps(13);
+      animation: typing 2s steps(15);
    }
 
    @keyframes blinkCursor {
