@@ -4,12 +4,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/css/styles.css">
+  <link rel="stylesheet" href="/css/loading.css">
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script defer src="script.js"></script>
   <title>Frontend Mentor | Single-page developer portfolio</title>
 </head>
 <body>
+  <!-- Loading Screen animation -->
+  <div class="loading">
+    Welcome to my Portfolio!
+  </div>
+  
   <main>
     <div class="navbar">
       <div class="logo">adamkeyes</div>
@@ -226,7 +231,7 @@
           
         </div>
         
-        <form action="">
+        <form action="" autocomplete="off">
           <div class="form-input name">
             <label for="fname">Name</label><br>
             <input type="text" id="name" placeholder="NAME" name="fname" required><br><br>

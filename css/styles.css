@@ -21,6 +21,27 @@
   border-radius: 1rem;
 }
 
+.loading {
+  display: none;
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
 body {
   background-color: #151515;
   color: #FFFFFF;
@@ -30,6 +51,8 @@ body {
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  -webkit-animation: 750ms linear 0s 1 slideInFromLeft;
+          animation: 750ms linear 0s 1 slideInFromLeft;
 }
 
 main {
@@ -98,6 +121,8 @@ main .projects-rings {
 }
 
 .profile {
+  -webkit-animation: 750ms linear 0s 1 slideInFromLeft;
+          animation: 750ms linear 0s 1 slideInFromLeft;
   max-width: 92%;
   display: flex;
   flex-direction: column-reverse;
@@ -186,6 +211,8 @@ hr {
 }
 
 .experience {
+  -webkit-animation: 1000ms linear 0s 1 slideInFromLeft;
+          animation: 1000ms linear 0s 1 slideInFromLeft;
   margin-bottom: 2.5rem;
 }
 .experience .skill {
@@ -205,6 +232,8 @@ hr {
 }
 
 .projects-body {
+  -webkit-animation: 1250ms linear 0s 1 slideInFromLeft;
+          animation: 1250ms linear 0s 1 slideInFromLeft;
   max-width: 92%;
   margin-bottom: 5rem;
 }

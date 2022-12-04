@@ -1,0 +1,30 @@
+@import "variables";
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+main, footer{
+    display: none;
+}
+
+body{
+    background-color: $grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 98vh;
+}
+
+.loading{
+    color: $white;
+    font-family: $font-family;
+    font-weight: map-get($font-weights, "bold");
+    font-size: 2.5rem;
+    animation: 1s ease-out 0s 1 slideInFromLeft;
+}

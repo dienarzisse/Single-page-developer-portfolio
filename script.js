@@ -1,5 +1,11 @@
 $(document).ready(function(){
 
+    setTimeout(function(){
+        $('link[rel=stylesheet]').remove();
+        $('head').append('<link rel="stylesheet" href="/css/styles.css">');
+    },2000);
+
+
     // hover effect on windows
     function listenHoverPicture(){
     $(".project-image").on("mouseover", function(){

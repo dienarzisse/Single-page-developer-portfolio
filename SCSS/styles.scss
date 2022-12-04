@@ -21,12 +21,15 @@
    -o-user-select: none;
 }
 
+
 // scrollbar
+
 //firefox
 :root{
    scrollbar-color: $green $grey !important;
    scrollbar-width: auto !important;
  }
+
  // chrome
  ::-webkit-scrollbar {
    width: 16px;
@@ -38,10 +41,24 @@
    background-color: $green;
    border-radius: 1rem;
 }
- 
+
+// no loding message
+.loading{
+   display: none;
+}
 
  // mobile first
  $mobile-body-width: 92%;
+
+ @keyframes slideInFromLeft {
+   0% {
+     transform: translateX(-100%);
+   }
+   100% {
+     transform: translateX(0);
+   }
+ }
+
 
  body{
    background-color: $black;
@@ -49,6 +66,7 @@
    font-family: $font-family;
    @include flex-center(column);
    overflow-x: hidden;
+   animation: 750ms linear 0s 1 slideInFromLeft;
  }
 
  main{
@@ -114,6 +132,7 @@
  }
 
  .profile{
+   animation: 750ms linear 0s 1 slideInFromLeft;
    max-width: $mobile-body-width;
    @include flex-center(column-reverse);
    position: relative;
@@ -199,6 +218,7 @@
  }
 
  .experience{
+   animation: 1000ms linear 0s 1 slideInFromLeft;
    margin-bottom: 2.5rem;
    .skill{
       margin-bottom: 1.5rem;
@@ -218,6 +238,7 @@
  }
  
  .projects-body{
+   animation: 1250ms linear 0s 1 slideInFromLeft;
    max-width: $mobile-body-width;
    margin-bottom: 5rem;
    .projects-header{
