@@ -33,7 +33,8 @@ main .profile-circle, main .profile-rings, main .projects-rings {
   position: absolute;
 }
 main .profile-circle {
-  display: none;
+  top: 15.5rem;
+  right: -6rem;
 }
 main .profile-rings {
   top: 8rem;
