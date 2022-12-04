@@ -1,9 +1,10 @@
 $(document).ready(function(){
 
     setTimeout(function(){
+        $('body').hide().fadeIn(2000);  
         $('link[rel=stylesheet]').remove();
         $('head').append('<link rel="stylesheet" href="/css/styles.css">');
-    },7000);
+    }, 3750);
 
 
     // hover effect on windows

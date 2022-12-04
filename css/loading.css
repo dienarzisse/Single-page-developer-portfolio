@@ -32,7 +32,11 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  min-height: 100vh;
+  min-height: 95vh;
+  -webkit-user-select: none; /* Safari */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
 }
 
 @-webkit-keyframes ring {
@@ -74,8 +78,8 @@ body {
 }
 .ring {
   position: absolute;
-  width: 40rem;
-  height: 40rem;
+  width: 45vw;
+  height: 45vw;
   border-radius: 50%;
   -webkit-animation: ring 2s linear infinite;
           animation: ring 2s linear infinite;
@@ -93,20 +97,20 @@ body {
 }
 
 @-webkit-keyframes typing {
-  0%, 90%, 100% {
+  0% {
     width: 0;
   }
-  30%, 60% {
-    width: 507.21px;
+  90% {
+    width: 100%;
   }
 }
 
 @keyframes typing {
-  0%, 90%, 100% {
+  0% {
     width: 0;
   }
-  30%, 60% {
-    width: 507.21px;
+  90% {
+    width: 100%;
   }
 }
 span {
@@ -114,11 +118,11 @@ span {
   color: #FFFFFF;
   font-family: "Space Grotesk", sans-serif;
   font-weight: 700;
-  font-size: 2.5rem;
+  font-size: 1.25rem;
   text-transform: lowercase;
   letter-spacing: 1px;
-  -webkit-animation: typing 8s steps(23) infinite;
-          animation: typing 8s steps(23) infinite;
+  -webkit-animation: typing 4s steps(24) infinite;
+          animation: typing 4s steps(24) infinite;
   overflow: hidden;
   white-space: nowrap;
 }
@@ -150,4 +154,25 @@ span:before {
   background: #4EE1A0;
   -webkit-animation: blinkCursor 0.8s steps(3) infinite;
           animation: blinkCursor 0.8s steps(3) infinite;
+}
+
+@media screen and (max-width: 768px) {
+  .ring {
+    opacity: 0;
+  }
+}
+@media screen and (min-width: 768px) {
+  .ring {
+    width: 25rem;
+    height: 25rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .ring {
+    width: 35rem;
+    height: 35rem;
+  }
+  span {
+    font-size: 2rem;
+  }
 }/*# sourceMappingURL=loading.css.map */
