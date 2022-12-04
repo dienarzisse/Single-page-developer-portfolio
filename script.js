@@ -1,12 +1,12 @@
 $(document).ready(function(){
 
     setTimeout(function(){
-        $('body').fadeOut(250); 
+        $('body').fadeOut(50); 
         setTimeout(function(){
             $('link[rel=stylesheet]').remove();
             $('body').fadeIn(1000);  
         $('head').append('<link rel="stylesheet" href="/css/styles.css">');
-        }, 250);
+        }, 50);
         
     }, 2750);
 
