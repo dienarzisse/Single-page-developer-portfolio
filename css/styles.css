@@ -2,7 +2,7 @@
 * {
   padding: 0;
   margin: 0;
-  box-sizing: 0;
+  box-sizing: border-box;
 }
 
 :root {
@@ -22,8 +22,9 @@ body {
 }
 
 main {
+  overflow-x: hidden;
   position: relative;
-  max-width: 92%;
+  min-width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -86,7 +87,7 @@ main .projects-rings {
 }
 
 .profile {
-  max-width: 21.5rem;
+  max-width: 92%;
   display: flex;
   flex-direction: column-reverse;
   justify-content: center;
@@ -167,7 +168,7 @@ main .projects-rings {
 }
 
 hr {
-  width: 100%;
+  width: 92%;
   color: #d9d9d9;
   margin-bottom: 2.5rem;
 }
@@ -192,7 +193,7 @@ hr {
 }
 
 .projects-body {
-  width: 100%;
+  max-width: 92%;
   margin-bottom: 5rem;
 }
 .projects-body .projects-header {
@@ -244,6 +245,10 @@ hr {
   gap: 1rem;
 }
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   position: relative;
   width: 100%;
   background-color: #242424;
@@ -251,6 +256,7 @@ footer {
   min-height: 56rem;
 }
 footer .footer-wrapper {
+  max-width: 92%;
   margin: 0 1rem;
 }
 footer .contact {
@@ -339,7 +345,7 @@ footer .navbar {
 
 @media screen and (min-width: 768px) {
   main {
-    min-width: 44.25rem;
+    min-width: 100%;
   }
   main .profile-circle {
     top: 28.75rem;
@@ -352,13 +358,13 @@ footer .navbar {
     top: 58.25em;
   }
   .navbar {
-    min-width: calc(100vw - 6rem);
+    min-width: 92%;
     margin: 0 1rem;
     margin-bottom: 2rem !important;
     flex-direction: row;
   }
   .profile {
-    min-width: 44.25rem;
+    min-width: 92%;
     max-height: 28.125rem;
     display: flex;
     flex-direction: row;
@@ -418,10 +424,10 @@ footer .navbar {
     transform: translate(3rem, -1rem);
   }
   hr {
-    max-width: 44.25rem;
+    max-width: 92%;
   }
   .experience {
-    max-width: 44.25rem;
+    max-width: 92%;
     height: -webkit-fit-content;
     height: -moz-fit-content;
     height: fit-content;
@@ -454,7 +460,7 @@ footer .navbar {
     display: none;
   }
   .projects-body {
-    max-width: 44.25rem;
+    max-width: 92%;
   }
   .projects {
     height: -webkit-fit-content;
@@ -475,9 +481,13 @@ footer .navbar {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-width: 92%;
+  }
+  .footer-wrapper .navbar, .footer-wrapper hr {
+    max-width: 100%;
   }
   .contact {
-    max-width: 27.875rem;
+    max-width: 70%;
   }
   .contact h2 {
     font-size: 5rem !important;
@@ -485,10 +495,10 @@ footer .navbar {
 }
 @media screen and (min-width: 1200px) {
   main {
-    min-width: 70rem !important;
+    min-width: 100%;
   }
   main .profile-circle {
-    right: 34%;
+    right: 38vw;
     top: 37rem;
   }
   main .projects-rings {
@@ -497,7 +507,11 @@ footer .navbar {
   .navbar {
     min-width: 70rem !important;
   }
+  hr {
+    max-width: 70rem !important;
+  }
   footer {
+    overflow: hidden;
     min-height: auto;
     display: flex;
     flex-direction: column;
@@ -506,6 +520,9 @@ footer .navbar {
   }
   footer .contact-rings {
     top: 26rem !important;
+  }
+  footer .footer-wrapper {
+    max-width: 70rem;
   }
   .profile {
     min-width: 70rem !important;
@@ -549,11 +566,8 @@ footer .navbar {
   .description .contact-me, .description .projects-body .project .links a, .projects-body .project .links .description a, .description footer .contact form .submit, footer .contact form .description .submit {
     margin-top: -5rem;
   }
-  hr {
-    min-width: 70rem !important;
-  }
   .experience {
-    min-width: 70rem !important;
+    min-width: 70rem;
     margin-top: 4.5rem;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -561,7 +575,7 @@ footer .navbar {
     grid-template-rows: repeat(1, min-content);
   }
   .projects-body {
-    min-width: 70rem !important;
+    max-width: 70rem;
   }
   .project {
     position: relative;
@@ -584,7 +598,7 @@ footer .navbar {
     cursor: pointer;
   }
   .contact {
-    min-width: 70rem !important;
+    min-width: 70rem;
     margin: 0 !important;
     padding-top: 2.5rem !important;
     padding: 0;
@@ -602,13 +616,22 @@ footer .navbar {
   }
 }
 @media screen and (min-width: 1600px) {
-  main, .footer-wrapper {
-    min-width: 85% !important;
+  .profile, .experience, .projects-body, .footer-wrapper, hr {
+    min-width: 80% !important;
   }
-  .profile, .experience, .projects-body, .navbar, hr {
-    min-width: 100% !important;
+  .contact, footer {
+    min-width: 100%;
   }
   .profile-circle {
-    right: 24rem !important;
+    opacity: 0;
+  }
+  .navbar {
+    width: 100%;
+  }
+  footer hr {
+    min-width: 100% !important;
+  }
+  .contact p {
+    font-size: 1.5rem !important;
   }
 }/*# sourceMappingURL=styles.css.map */

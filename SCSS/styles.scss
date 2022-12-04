@@ -3,7 +3,7 @@
  *{
     padding: 0;
     margin: 0;
-    box-sizing: 0;
+    box-sizing: border-box;
  }
 
 @mixin flex-center($direction: row){
@@ -21,13 +21,15 @@
    -o-user-select: none;
 }
 
-// works on firefox
 :root{
    scrollbar-color: $green $grey !important;
    scrollbar-width: auto !important;
  }
+ 
 
  // mobile first
+ $mobile-body-width: 92%;
+
  body{
    background-color: $black;
    color: $white;
@@ -37,8 +39,9 @@
  }
 
  main{
+   overflow-x: hidden;
    position: relative;
-   max-width: 92%;
+   min-width: 100%;
    @include flex-center(column);
 
    // background patterns
@@ -98,7 +101,7 @@
  }
 
  .profile{
-   max-width: 21.5rem;
+   max-width: $mobile-body-width;
    @include flex-center(column-reverse);
    position: relative;
    h1{
@@ -176,7 +179,7 @@
 }
 
  hr{
-   width: 100%;
+   width: $mobile-body-width;
    color: $light-grey;
    margin-bottom: 2.5rem;
  }
@@ -201,7 +204,7 @@
  }
  
  .projects-body{
-   width: 100%;
+   max-width: $mobile-body-width;
    margin-bottom: 5rem;
    .projects-header{
       width: 100%;
@@ -264,12 +267,14 @@
  }
  
  footer{
+   @include flex-center(column);
    position: relative;
    width: 100%;
    background-color: $grey;
    text-align: center;
    min-height: 56rem; 
    .footer-wrapper{
+      max-width: $mobile-body-width;
       margin: 0 1rem;
    }
    .contact{
@@ -377,10 +382,11 @@
    }
  }
 
+ $tablet-body-width:92%;
  // tablet
  @media screen and (min-width: $tablet) {
    main{
-      min-width: 44.25rem;
+      min-width: 100%;
       .profile-circle{
          top: 28.75rem;
       }
@@ -395,14 +401,14 @@
       }
    }
    .navbar{
-      min-width: calc(100vw - 6rem);
+      min-width: $tablet-body-width;
       margin: 0 1rem;
       margin-bottom: 2rem !important;
       flex-direction: row;
    }
 
    .profile{
-      min-width: 44.25rem;
+      min-width: $tablet-body-width;
       max-height: 28.125rem;
       display: flex;
       flex-direction: row;
@@ -465,12 +471,12 @@
    }
 
    hr{
-      max-width: 44.25rem;
+      max-width: $tablet-body-width;
    }
 
    // experience
    .experience{
-      max-width: 44.25rem;
+      max-width: $tablet-body-width;
       height: fit-content;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -500,7 +506,7 @@
 
    // projects
    .projects-body{
-      max-width: 44.25rem;
+      max-width: $tablet-body-width;
    }
 
    .projects{
@@ -521,23 +527,29 @@
 
    .footer-wrapper{
       @include flex-center(column);
+      min-width: $tablet-body-width;
+      .navbar, hr{
+         max-width: 100%;
+      }
    }
 
    .contact{
-      max-width: 27.875rem;
+      max-width: 70%;
       h2{
          font-size: 5rem !important;
       }
    }
  }
 
+
+
  @media screen and (min-width: $desktop) {
 
    main{
-      min-width: 70rem !important;
+      min-width:  100%;
    
       .profile-circle{
-         right: 34%;
+         right: 38vw;
          top: 37rem;
       }
       .projects-rings{
@@ -546,11 +558,15 @@
    }
 
    .navbar{
-      min-width: 70rem !important;
+      min-width: $desktop-body-width !important;
+   }
+
+   hr{
+      max-width: $desktop-body-width !important;
    }
 
    footer{
-      // overflow-y: hidden;
+      overflow: hidden;
       min-height: auto;
       display: flex;
       flex-direction: column;
@@ -560,11 +576,16 @@
       .contact-rings{
          top: 26rem !important;
       }
+
+      .footer-wrapper{
+         max-width: $desktop-body-width;
+      }
+
    }
 
    // profile
    .profile{
-      min-width: 70rem !important;
+      min-width: $desktop-body-width !important;
       min-height: 41rem;
       margin-bottom: 6.5rem;
       justify-content: space-between;
@@ -617,12 +638,9 @@
 
    }
 
-   hr{
-      min-width: 70rem !important;
-   }
    // experience
    .experience{
-      min-width: 70rem !important;
+      min-width: $desktop-body-width;
       margin-top: 4.5rem;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -631,7 +649,7 @@
 
    // projects
    .projects-body{
-      min-width: 70rem !important;
+      max-width: $desktop-body-width;
    }
    .project{
       position: relative;
@@ -656,7 +674,7 @@
 
    // contact
    .contact{
-      min-width: 70rem !important;
+      min-width: $desktop-body-width;
       margin:0 !important;
       padding-top: 2.5rem !important;
       padding:0;
@@ -675,16 +693,32 @@
 
  }
 
- @media screen and (min-width: $desktop-wide) {
-   main,.footer-wrapper{
-      min-width: 85% !important;
-   } 
 
-   .profile, .experience, .projects-body, .navbar, hr{
-      min-width: 100% !important;
+ @media screen and (min-width: $desktop-wide) {
+
+   .profile, .experience, .projects-body, .footer-wrapper, hr{
+      min-width:  $wide-dekstop-width !important;
+   }
+
+   .contact, footer{
+      min-width: 100%;
    }
 
    .profile-circle{
-      right: 24rem !important;
+      opacity: 0;
+   }
+
+   .navbar{
+      width: 100%;
+   }
+
+   footer hr{
+      min-width: 100% !important;
+   }
+
+   .contact{
+      p{
+         font-size: 1.5rem !important;
+      }
    }
  }
