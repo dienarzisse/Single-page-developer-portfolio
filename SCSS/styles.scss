@@ -42,6 +42,11 @@
    border-radius: 1rem;
 }
 
+// smooth scroll
+html{
+   scroll-behavior: smooth;
+}
+
 // no loding message
 .loading{
    display: none;

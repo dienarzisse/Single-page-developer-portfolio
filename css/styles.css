@@ -21,6 +21,10 @@
   border-radius: 1rem;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .loading {
   display: none;
 }
