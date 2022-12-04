@@ -35,7 +35,8 @@ main .profile-circle, main .profile-rings, main .projects-rings {
 }
 main .profile-circle {
   top: 15.5rem;
-  right: -6rem;
+  right: 0;
+  transform: translateX(6rem);
 }
 main .profile-rings {
   top: 8rem;

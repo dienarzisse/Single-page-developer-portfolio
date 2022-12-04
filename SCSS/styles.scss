@@ -47,7 +47,8 @@
 
    .profile-circle{
       top: 15.5rem;
-      right: -6rem;
+      right: 0;
+      transform: translateX(6rem);
    }
 
    .profile-rings{
