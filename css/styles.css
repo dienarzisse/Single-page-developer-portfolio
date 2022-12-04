@@ -132,14 +132,66 @@ main .projects-rings {
   letter-spacing: 0rem;
   margin-bottom: 1.5rem;
 }
+@-webkit-keyframes typing {
+  0%, 90%, 100% {
+    width: 0;
+  }
+  30%, 60% {
+    width: 100%;
+  }
+}
+@keyframes typing {
+  0%, 90%, 100% {
+    width: 0;
+  }
+  30%, 60% {
+    width: 100%;
+  }
+}
+.profile .br2 {
+  display: block;
+}
 .profile span.dev-name {
+  display: inline-flex;
+  position: relative;
   overflow: hidden;
   white-space: nowrap;
   text-decoration: underline;
   -webkit-text-decoration-color: #4EE1A0;
           text-decoration-color: #4EE1A0;
-  text-decoration-thickness: 0.25rem;
-  text-underline-offset: 0.55rem;
+  max-width: -webkit-fit-content;
+  max-width: -moz-fit-content;
+  max-width: fit-content;
+  letter-spacing: 1px;
+  -webkit-animation: typing 5.5s steps(13) infinite;
+          animation: typing 5.5s steps(13) infinite;
+}
+@-webkit-keyframes blinkCursor {
+  0%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+@keyframes blinkCursor {
+  0%, 75% {
+    opacity: 1;
+  }
+  76%, 100% {
+    opacity: 0;
+  }
+}
+.profile span.dev-name:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: #4EE1A0;
+  -webkit-animation: blinkCursor 0.8s steps(3) infinite;
+          animation: blinkCursor 0.8s steps(3) infinite;
 }
 .profile .profile-image {
   transform: translateY(-6rem);
@@ -442,6 +494,9 @@ footer .navbar {
   }
   .profile .description .br1 {
     display: block;
+  }
+  .profile .description .br2 {
+    display: none;
   }
   .profile picture {
     min-width: 20.125rem;

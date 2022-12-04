@@ -152,13 +152,53 @@ html{
       margin-bottom: 1.5rem;
    }
 
+   @keyframes typing {
+      0%, 90%, 100%
+      {
+          width: 0;
+      }
+      30%, 60%
+      {
+         width: 100%;
+      }
+  }
+   .br2{
+      display: block;
+   }
    span.dev-name{
+      display: inline-flex;
+      position: relative;
       overflow: hidden;
       white-space: nowrap;
       text-decoration: underline;
       text-decoration-color: $green;
-      text-decoration-thickness: 0.25rem;
-      text-underline-offset: 0.55rem;
+      max-width: fit-content;
+      letter-spacing: 1px;
+      animation: typing 5.5s steps(13) infinite;
+   }
+
+   @keyframes blinkCursor {
+      0%,75%
+      {
+          opacity: 1;
+      }
+  
+      76%, 100%
+      {
+          opacity: 0;
+      }
+      
+  }
+
+   span.dev-name:before{
+   content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: $green;
+    animation: blinkCursor 0.8s steps(3) infinite;
    }
    
    .profile-image{
@@ -496,6 +536,9 @@ html{
          }
          .br1{
             display: block;
+         }
+         .br2{
+            display: none;
          }
       }
       picture{
