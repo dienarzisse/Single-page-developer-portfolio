@@ -1,10 +1,13 @@
 $(document).ready(function(){
 
     setTimeout(function(){
-        $('body').hide(); 
-        $('link[rel=stylesheet]').remove();
-        $('body').fadeIn(1000);  
+        $('body').fadeOut(250); 
+        setTimeout(function(){
+            $('link[rel=stylesheet]').remove();
+            $('body').fadeIn(1000);  
         $('head').append('<link rel="stylesheet" href="/css/styles.css">');
+        }, 250);
+        
     }, 2750);
 
 
