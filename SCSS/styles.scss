@@ -21,17 +21,18 @@
    -o-user-select: none;
 }
 
+// works on firefox
 :root{
    scrollbar-color: $green $grey !important;
    scrollbar-width: auto !important;
  }
+
  // mobile first
  body{
    background-color: $black;
    color: $white;
    font-family: $font-family;
    @include flex-center(column);
-   max-width: 100vw;
    overflow-x: hidden;
  }
 
@@ -46,9 +47,7 @@
    }
 
    .profile-circle{
-      top: 15.5rem;
-      right: 0;
-      transform: translateX(6rem);
+      display: none;
    }
 
    .profile-rings{
@@ -677,7 +676,7 @@
 
  @media screen and (min-width: $desktop-wide) {
    main,.footer-wrapper{
-      min-width: 90% !important;
+      min-width: 85% !important;
    } 
 
    .profile, .experience, .projects-body, .navbar, hr{

@@ -18,7 +18,6 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 100vw;
   overflow-x: hidden;
 }
 
@@ -34,9 +33,7 @@ main .profile-circle, main .profile-rings, main .projects-rings {
   position: absolute;
 }
 main .profile-circle {
-  top: 15.5rem;
-  right: 0;
-  transform: translateX(6rem);
+  display: none;
 }
 main .profile-rings {
   top: 8rem;
@@ -605,7 +602,7 @@ footer .navbar {
 }
 @media screen and (min-width: 1600px) {
   main, .footer-wrapper {
-    min-width: 90% !important;
+    min-width: 85% !important;
   }
   .profile, .experience, .projects-body, .navbar, hr {
     min-width: 100% !important;
