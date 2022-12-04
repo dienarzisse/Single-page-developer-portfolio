@@ -162,9 +162,10 @@ main .projects-rings {
   max-width: -webkit-fit-content;
   max-width: -moz-fit-content;
   max-width: fit-content;
-  letter-spacing: 0px;
-  -webkit-animation: typing 2s steps(15);
-          animation: typing 2s steps(15);
+  font-family: "Times New Roman", Times, serif;
+  letter-spacing: 1px;
+  -webkit-animation: typing 6s linear;
+          animation: typing 6s linear;
 }
 @-webkit-keyframes blinkCursor {
   0%, 75% {
@@ -192,6 +193,8 @@ main .projects-rings {
   background: #4EE1A0;
   -webkit-animation: blinkCursor 0.8s steps(3) infinite;
           animation: blinkCursor 0.8s steps(3) infinite;
+  -webkit-animation-delay: 4s;
+          animation-delay: 4s;
 }
 .profile .profile-image {
   transform: translateY(-6rem);
