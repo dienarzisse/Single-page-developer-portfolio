@@ -120,7 +120,8 @@ html{
 
    img:hover{
       filter: brightness(0) saturate(100%) invert(79%) sepia(6%) saturate(3457%) hue-rotate(99deg) brightness(98%) contrast(88%);
-      min-height: 2rem;
+      min-height: 2.75rem;
+      transition: 275ms ease;
    } 
 
    span{
@@ -201,13 +202,10 @@ html{
    background-size: 200% 100%;
    background-position: 100%;
    transition: background-position 275ms ease;
-   transition: 0.25s ease-out;
 }
 
  .contact-me:hover{
    background-position: 0 100%;
-   font-size: 1.25rem;
-   transition: 0.25s ease-in;
 }
 
  hr{

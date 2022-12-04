@@ -1,15 +1,15 @@
 $(document).ready(function(){
 
-    setTimeout(function(){
-        $('body').hide().fadeIn(1000);
-        $('link[rel=stylesheet]').remove();
-        $('head').append('<link rel="stylesheet" href="/css/styles.css">');
-        $('head').append('<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>');      
-    }, 2750);
+    // setTimeout(function(){
+    //     $('body').hide().fadeIn(1000);
+    //     $('link[rel=stylesheet]').remove();
+    //     $('head').append('<link rel="stylesheet" href="/css/styles.css">');
+    //     $('head').append('<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>');      
+    // }, 2750);
 
-    setTimeout(function(){
-        AOS.refresh();        
-    }, 3500);
+    // setTimeout(function(){
+    //     AOS.refresh();        
+    // }, 3500);
 
 
     // hover effect on windows

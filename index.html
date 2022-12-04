@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
-  <link rel="stylesheet" href="/css/loading.css">
+  <link rel="stylesheet" href="/css/styles.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <title>Frontend Mentor | Single-page developer portfolio</title>
 </head>
@@ -99,7 +99,7 @@
   </div>    
   <hr class="skills-projects-separator">
 
-  <div class="projects-body">
+  <div class="projects-body" data-aos="fade-right">
 
     <div class="projects-header">
       <h2>Projects</h2>
@@ -287,7 +287,10 @@
   <!-- Scripts -->
   <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
   <script >
-    AOS.init();
+    AOS.init({
+      duration: 500,
+      offset: 200
+    });
   </script>
   <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script defer src="script.js"></script>
