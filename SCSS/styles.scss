@@ -35,7 +35,6 @@
  }
 
  main{
-   overflow-x: hidden;
    position: relative;
    max-width: 92%;
    @include flex-center(column);
