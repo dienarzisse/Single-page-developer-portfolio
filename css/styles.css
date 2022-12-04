@@ -10,6 +10,17 @@
   scrollbar-width: auto !important;
 }
 
+::-webkit-scrollbar {
+  width: 16px;
+  height: 16px;
+  background-color: #242424;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4EE1A0;
+  border-radius: 1rem;
+}
+
 body {
   background-color: #151515;
   color: #FFFFFF;
@@ -326,6 +337,12 @@ footer .contact form .invalid-message {
   display: block;
   margin-top: 0.375rem;
   color: #FF6F5B;
+}
+footer .contact form .valid {
+  border-bottom: 1px solid #4EE1A0;
+}
+footer .contact form .invalid {
+  border-bottom: 1px solid #FF6F5B;
 }
 footer .contact form .form-input.message .invalid-message {
   margin-top: -1.5rem;

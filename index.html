@@ -227,23 +227,23 @@
         </div>
         
         <form action="">
-          <div class="form-input">
+          <div class="form-input name">
             <label for="fname">Name</label><br>
-            <input type="text" id="fname" placeholder="NAME" name="fname"><br><br>
+            <input type="text" id="name" placeholder="NAME" name="fname" required><br><br>
             <img class="invalid-icon" src="./images/icon-error.svg" alt="icon error">
-            <p class="invalid-message">Sorry, invalid format here</p>
+            <p class="invalid-message">Sorry, field is required</p>
           </div>
-          <div class="form-input">
+          <div class="form-input email">
             <label for="email">Email</label><br>
-            <input type="email" id="email" placeholder="EMAIL" name="email"><br><br>
+            <input type="email" id="email" placeholder="EMAIL" name="email" required><br><br>
             <img class="invalid-icon" src="./images/icon-error.svg" alt="icon error">
             <p class="invalid-message">Sorry, invalid format here</p>
           </div>
           <div class="form-input message">
             <label for="message">Message</label><br>
-            <textarea id="message" placeholder="MESSAGE" name="message" rows="4" cols="50"></textarea><br><br>
+            <textarea id="message" placeholder="MESSAGE" name="message" rows="4" cols="50" required></textarea><br><br>
             <img class="invalid-icon" src="./images/icon-error.svg" alt="icon error">
-            <p class="invalid-message">Sorry, invalid format here</p>
+            <p class="invalid-message">Sorry, field is required</p>
           </div>
           <input class="submit" type="submit" value="Send message">
         </form>

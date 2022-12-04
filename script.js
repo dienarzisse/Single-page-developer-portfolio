@@ -36,4 +36,75 @@ $(document).ready(function(){
             listenHoverPicture();
         }
     });
+
+
+    // invalid form check
+    function validField(fieldId, fieldType, eventType){
+        let field = $(`#${fieldId}`).val();
+        if(fieldId !== 'email'){
+            if(field.length === 0){
+                $(`.${fieldId}`).find(`${fieldType}`).removeClass("valid");
+                if(eventType === "submit"){
+                    $(`.${fieldId}`).find("p").css("opacity","1");
+                    $(`.${fieldId}`).find(".invalid-icon").css("opacity","1");
+                    $(`.${fieldId}`).find(`${fieldType}`).addClass("invalid");
+                }                
+            }
+            else{
+                $(`.${fieldId}`).find("p").css("opacity","0");
+                $(`.${fieldId}`).find(".invalid-icon").css("opacity","0");
+                $(`.${fieldId}`).find(`${fieldType}`).removeClass("invalid");
+                $(`.${fieldId}`).find(`${fieldType}`).addClass("valid");
+            }
+        }
+        else{
+            let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
+            if(field.length === 0){
+                $(`.${fieldId}`).find(`${fieldType}`).removeClass("valid");
+                $(`.${fieldId}`).find(`${fieldType}`).removeClass("invalid");
+                $(`.${fieldId}`).find("p").css("opacity","0");
+                $(`.${fieldId}`).find(".invalid-icon").css("opacity","0");
+                if(eventType === "submit"){
+                    $(`.${fieldId}`).find("p").css("opacity","1");
+                    $(`.${fieldId}`).find(".invalid-icon").css("opacity","1");
+                    $(`.${fieldId}`).find(`${fieldType}`).addClass("invalid");
+                }                
+            }
+            else{
+                if(!field.match(emailRegex)){
+                    $(`.${fieldId}`).find(`${fieldType}`).removeClass("valid");
+                    $(`.${fieldId}`).find("p").css("opacity","1");
+                    $(`.${fieldId}`).find(".invalid-icon").css("opacity","1");
+                    $(`.${fieldId}`).find(`${fieldType}`).addClass("invalid");
+                }
+                else{
+                    $(`.${fieldId}`).find("p").css("opacity","0");
+                    $(`.${fieldId}`).find(".invalid-icon").css("opacity","0");
+                    $(`.${fieldId}`).find(`${fieldType}`).removeClass("invalid");
+                    $(`.${fieldId}`).find(`${fieldType}`).addClass("valid");
+                }
+            }
+        }
+    }
+
+    // invalid form on click
+    $(".submit").click(function (){
+        validField("name", "input", "submit");
+        validField("email", "input", "submit");
+        validField("message", "textarea", "submit");
+    });
+
+    $("#name").on('keyup',function (){
+        validField("name", "input", "input");
+    });
+
+    $("#email").on('keyup',function (){
+        validField("email", "input", "input");
+    });
+
+    $("#message").on('keyup',function (){
+        validField("message", "textarea", "input");
+    });
+
+    
 });
