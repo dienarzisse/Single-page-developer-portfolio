@@ -9,7 +9,7 @@ $(document).ready(function(){
 
     setTimeout(function(){
         AOS.refresh();        
-    }, 3500);
+    }, 3000);
 
 
     // hover effect on windows
