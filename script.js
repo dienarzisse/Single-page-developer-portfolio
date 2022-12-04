@@ -1,14 +1,15 @@
 $(document).ready(function(){
 
     setTimeout(function(){
-        $('body').fadeOut(50); 
-        setTimeout(function(){
-            $('link[rel=stylesheet]').remove();
-            $('body').fadeIn(1000);  
+        $('body').hide().fadeIn(1000);
+        $('link[rel=stylesheet]').remove();
         $('head').append('<link rel="stylesheet" href="/css/styles.css">');
-        }, 50);
-        
+        $('head').append('<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>');      
     }, 2750);
+
+    setTimeout(function(){
+        AOS.refresh();        
+    }, 3500);
 
 
     // hover effect on windows

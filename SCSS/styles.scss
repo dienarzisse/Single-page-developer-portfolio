@@ -55,14 +55,6 @@ html{
  // mobile first
  $mobile-body-width: 92%;
 
- @keyframes slideInFromLeft {
-   0% {
-     transform: translateX(-100%);
-   }
-   100% {
-     transform: translateX(0);
-   }
- }
 
 
  body{
@@ -71,7 +63,6 @@ html{
    font-family: $font-family;
    @include flex-center(column);
    overflow-x: hidden;
-   animation: 750ms linear 0s 1 slideInFromLeft;
  }
 
  main{
@@ -137,7 +128,6 @@ html{
  }
 
  .profile{
-   animation: 750ms linear 0s 1 slideInFromLeft;
    max-width: $mobile-body-width;
    @include flex-center(column-reverse);
    position: relative;
@@ -223,7 +213,6 @@ html{
  }
 
  .experience{
-   animation: 1000ms linear 0s 1 slideInFromLeft;
    margin-bottom: 2.5rem;
    .skill{
       margin-bottom: 1.5rem;
@@ -243,7 +232,6 @@ html{
  }
  
  .projects-body{
-   animation: 1250ms linear 0s 1 slideInFromLeft;
    max-width: $mobile-body-width;
    margin-bottom: 5rem;
    .projects-header{
@@ -307,7 +295,6 @@ html{
  }
  
  footer{
-   animation: 1500ms linear 0s 1 slideInFromLeft;
    @include flex-center(column);
    position: relative;
    width: 100%;

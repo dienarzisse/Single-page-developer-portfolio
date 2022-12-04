@@ -5,8 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32x32.png">
   <link rel="stylesheet" href="/css/loading.css">
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-  <script defer src="script.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css"/>
   <title>Frontend Mentor | Single-page developer portfolio</title>
 </head>
 <body>
@@ -39,7 +38,7 @@
     </ul>
     </div>
 
-  <div class="profile">
+  <div class="profile" data-aos="fade-right">
     <div class="description">
       <div class="header-wrapper">
         <h1>Nice to <br class="br1">meet you! <br class="br2">I'm <span class="dev-name">Adam Keyes.</span></h1>
@@ -72,7 +71,7 @@
 
   <hr>
 
-  <div class="experience">
+  <div class="experience" data-aos="fade-right">
     <div class="skill">
       <h2>HTML</h2>
       <p>4 Years Experience</p>
@@ -100,7 +99,7 @@
   </div>    
   <hr class="skills-projects-separator">
 
-  <div class="projects-body">
+  <div class="projects-body" data-aos="fade-right">
 
     <div class="projects-header">
       <h2>Projects</h2>
@@ -221,7 +220,7 @@
     </div>
   </div>
   </main>
-  <footer>
+  <footer data-aos="fade-right">
     <div class="footer-wrapper">
       <div class="contact" id="contact">
         <div class="contact-description">
@@ -284,5 +283,13 @@
       </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script >
+    AOS.init();
+  </script>
+  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script defer src="script.js"></script>
 </body>
 </html>
