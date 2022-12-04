@@ -163,8 +163,8 @@ main .projects-rings {
   max-width: -moz-fit-content;
   max-width: fit-content;
   letter-spacing: 0px;
-  -webkit-animation: typing 4s steps(13) infinite;
-          animation: typing 4s steps(13) infinite;
+  -webkit-animation: typing 4s steps(13);
+          animation: typing 4s steps(13);
 }
 @-webkit-keyframes blinkCursor {
   0%, 75% {
